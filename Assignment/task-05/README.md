@@ -1,4 +1,4 @@
-# KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
+[# KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
  
 ## Introduction
 This guide details the process of designing and setting up a Virtual Private Cloud (VPC) with both public and private subnets in AWS EU-West-1 (Ireland) region. The setup includes routing, security groups, and network access control lists (NACLs) to ensure proper communication and security within the VPC.
@@ -134,3 +134,4 @@ This guide details the process of designing and setting up a Virtual Private Clo
  
 ## Conclusion
 This guide has provided a comprehensive walkthrough to set up a secure and functional VPC in AWS with both public and private subnets, proper routing, and security configurations. By following these steps, you have created a robust network architecture suitable for various applications.
+](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/7-updatedPrivateRouteTables.png)
