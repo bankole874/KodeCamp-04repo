@@ -1,4 +1,4 @@
-[# KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
+# KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
  
 ## Introduction
 This guide details the process of designing and setting up a Virtual Private Cloud (VPC) with both public and private subnets in AWS EU-West-1 (Ireland) region. The setup includes routing, security groups, and network access control lists (NACLs) to ensure proper communication and security within the VPC.
@@ -58,31 +58,25 @@ This guide details the process of designing and setting up a Virtual Private Clo
 1. Create the Public Route Table:
    - **Name**: PublicRouteTable
    - **VPC**: KCVPC
- 
 2. Add a route to the IGW (0.0.0.0/0 -> IGW).
- 
 3. Associate the PublicSubnet with the PublicRouteTable.
- 
 4. Create the Private Route Table:
    - **Name**: PrivateRouteTable
    - **VPC**: KCVPC
- 
-![Create Private Route Table](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/5-RouteTables.png)
- 
 5. Ensure no direct route to the internet in the PrivateRouteTable.
  
-![No Direct Route](./images/no_direct_route.png)
+![Create Route Tables](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/5-RouteTables.png)
  
 ### NAT Gateway Configuration
  
 1. Create a NAT Gateway in the PublicSubnet.
+
+![NAT Gateway](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/6-NATGateway.png)
+
 2. Allocate an Elastic IP for the NAT Gateway.
- 
-![Create NAT Gateway](./images/create_nat_gateway.png)
- 
 3. Update the PrivateRouteTable to route internet traffic (0.0.0.0/0) to the NAT Gateway.
  
-![Update Private Route Table](./images/update_private_route_table.png)
+![update private route table](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/7-updatedPrivateRouteTables.png)
  
 ### Security Groups Setup
  
@@ -134,4 +128,3 @@ This guide details the process of designing and setting up a Virtual Private Clo
  
 ## Conclusion
 This guide has provided a comprehensive walkthrough to set up a secure and functional VPC in AWS with both public and private subnets, proper routing, and security configurations. By following these steps, you have created a robust network architecture suitable for various applications.
-](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/7-updatedPrivateRouteTables.png)
