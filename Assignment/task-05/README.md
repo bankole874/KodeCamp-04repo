@@ -1,4 +1,3 @@
-
 # KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
  
 ## Table of Contents
@@ -46,23 +45,19 @@ This guide details the process of designing and setting up a Virtual Private Clo
    - **Name**: KCVPC
    - **IPv4 CIDR block**: 10.0.0.0/16
  
-![Create VPC](./images/create_vpc.png)
+![Create VPC](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/2-VPCcreation.png)
  
 ### Subnets Creation
  
-1. Create the Public Subnet:
+1. Create the Public and Private Subnets:
    - **Name**: PublicSubnet
    - **IPv4 CIDR block**: 10.0.1.0/24
    - **Availability Zone**: Select any one (e.g., eu-west-1a)
- 
-![Create Public Subnet](./images/create_public_subnet.png)
- 
-2. Create the Private Subnet:
    - **Name**: PrivateSubnet
    - **IPv4 CIDR block**: 10.0.2.0/24
    - **Availability Zone**: Select the same as the Public Subnet (e.g., eu-west-1a)
+![Create Public Subnet](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/3-PublicAndPrivateSubnets.png)
  
-![Create Private Subnet](./images/create_private_subnet.png)
  
 ### Internet Gateway Configuration
  
