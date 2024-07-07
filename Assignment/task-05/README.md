@@ -1,20 +1,5 @@
 # KCVPC Project - Virtual Private Cloud Setup in AWS EU-West-1 (Ireland) Region
  
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Architecture Diagram](#architecture-diagram)
-3. [Components Explanation](#components-explanation)
-4. [Step-by-Step Guide](#step-by-step-guide)
-    - [VPC Creation](#vpc-creation)
-    - [Subnets Creation](#subnets-creation)
-    - [Internet Gateway Configuration](#internet-gateway-configuration)
-    - [Route Tables Configuration](#route-tables-configuration)
-    - [NAT Gateway Configuration](#nat-gateway-configuration)
-    - [Security Groups Setup](#security-groups-setup)
-    - [Network ACLs Configuration](#network-acls-configuration)
-    - [Instances Deployment](#instances-deployment)
-5. [Conclusion](#conclusion)
- 
 ## Introduction
 This guide details the process of designing and setting up a Virtual Private Cloud (VPC) with both public and private subnets in AWS EU-West-1 (Ireland) region. The setup includes routing, security groups, and network access control lists (NACLs) to ensure proper communication and security within the VPC.
  
@@ -62,14 +47,11 @@ This guide details the process of designing and setting up a Virtual Private Clo
  
 ### Internet Gateway Configuration
  
-1. Create an Internet Gateway:
-   - **Name**: KCIGW
+1. Create and Attach Internet Gateway:
+   - **Name**: IGW
  
-![Create IGW](./images/create_igw.png)
- 
-2. Attach the IGW to the KCVPC.
- 
-![Attach IGW](./images/attach_igw.png)
+![Create IGW](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/4-createAndAttachIGW.png)
+
  
 ### Route Tables Configuration
  
@@ -77,21 +59,15 @@ This guide details the process of designing and setting up a Virtual Private Clo
    - **Name**: PublicRouteTable
    - **VPC**: KCVPC
  
-![Create Public Route Table](./images/create_public_route_table.png)
- 
 2. Add a route to the IGW (0.0.0.0/0 -> IGW).
  
-![Add Route to IGW](./images/add_route_to_igw.png)
- 
 3. Associate the PublicSubnet with the PublicRouteTable.
- 
-![Associate Public Subnet](./images/associate_public_subnet.png)
  
 4. Create the Private Route Table:
    - **Name**: PrivateRouteTable
    - **VPC**: KCVPC
  
-![Create Private Route Table](./images/create_private_route_table.png)
+![Create Private Route Table](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/5-RouteTables.png)
  
 5. Ensure no direct route to the internet in the PrivateRouteTable.
  
