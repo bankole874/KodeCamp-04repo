@@ -56,6 +56,7 @@ This guide details the process of designing and setting up a Virtual Private Clo
    - **Name**: PrivateSubnet
    - **IPv4 CIDR block**: 10.0.2.0/24
    - **Availability Zone**: Select the same as the Public Subnet (e.g., eu-west-1a)
+
 ![Create Public Subnet](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/3-PublicAndPrivateSubnets.png)
  
  
