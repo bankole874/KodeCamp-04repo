@@ -88,14 +88,12 @@ This guide details the process of designing and setting up a Virtual Private Clo
      - SSH (port 22) from your specific IP
    - **Outbound Rules**: Allow all outbound traffic
  
-![Public Security Group](./images/public_security_group.png)
- 
 2. Create a Security Group for private instances (e.g., database servers):
    - **Name**: PrivateSG
    - **Inbound Rules**: Allow traffic from the PublicSubnet on required ports (e.g., MySQL port 3306)
    - **Outbound Rules**: Allow all outbound traffic
  
-![Private Security Group](./images/private_security_group.png)
+![Security Groups](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/8-securityGroups.png)
  
 ### Network ACLs Configuration
  
@@ -103,13 +101,11 @@ This guide details the process of designing and setting up a Virtual Private Clo
    - Allow inbound HTTP, HTTPS, and SSH traffic.
    - Allow all outbound traffic.
  
-![Public Subnet NACL](./images/public_subnet_nacl.png)
- 
 2. Configure NACL for the Private Subnet:
    - Allow inbound traffic from the Public Subnet.
    - Allow outbound traffic to the Public Subnet and the internet.
  
-![Private Subnet NACL](./images/private_subnet_nacl.png)
+![NACLs](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/9-networkACLs.png)
  
 ### Instances Deployment
  
@@ -117,14 +113,14 @@ This guide details the process of designing and setting up a Virtual Private Clo
    - **Security Group**: PublicSG
    - Verify internet access.
  
-![Public EC2 Instance](./images/public_ec2_instance.png)
+![Public EC2 Instance](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/10-sshConnectionToPublicInstance.png)
  
 2. Launch an EC2 instance in the PrivateSubnet:
    - **Security Group**: PrivateSG
    - Verify internet access through the NAT Gateway.
    - Ensure communication with the public instance.
  
-![Private EC2 Instance](./images/private_ec2_instance.png)
+![Private EC2 Instance](https://github.com/bankole874/KodeCamp-04repo/blob/main/Assignment/task-05/images/11-testingConnectiontoPrivateInstance.png)
  
 ## Conclusion
 This guide has provided a comprehensive walkthrough to set up a secure and functional VPC in AWS with both public and private subnets, proper routing, and security configurations. By following these steps, you have created a robust network architecture suitable for various applications.
