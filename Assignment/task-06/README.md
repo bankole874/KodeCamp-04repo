@@ -1,1 +1,0 @@
-# KCVPC Terraform Project
